@@ -11,10 +11,10 @@ future==0.17.1
 idna==2.8
 imageio==2.5.0
 imageio-ffmpeg==0.3.0
-kiwisolver==1.0.1
+kiwisolver==1.1.0
 matplotlib==3.0.3
 moviepy==1.0.0
-numpy==1.16.2
+numpy==1.16.3
 Pillow==6.0.0
 proglog==0.1.9
 pygame==1.9.5
@@ -24,4 +24,4 @@ requests==2.21.0
 six==1.12.0
 toml==0.10.0
 tqdm==4.31.1
-urllib3==1.24.1
+urllib3==1.25.1
