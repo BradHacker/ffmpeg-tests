@@ -1,0 +1,7 @@
+temp/*
+sources/videos/*
+sources/music/*
+outputs/*
+.vscode
+venv
+.DS_Store
