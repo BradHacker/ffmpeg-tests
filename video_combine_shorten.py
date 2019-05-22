@@ -7,15 +7,26 @@ import numpy as np
 import math
 from datetime import datetime, timedelta
 import os
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument(
+    "-v", help="path to a folder containing the target videos", required=True
+)
+ap.add_argument(
+    "-o", help="what to name the output file (no file extensions", required=True
+)
+args = ap.parse_args()
 
 total_start_time = datetime.now().replace(microsecond=0)
 
 FRAME_BUFFER = 5
-VIDEO_FILES = ["clarke_imf.mp4", "bonding_in_solids.mp4"]
-OUTPUT_NAME = "Bonding"
+VIDEOS_PATH = args.v
+VIDEO_FILES = os.listdir(path=args.v)
+OUTPUT_NAME = args.o
 
 print("------")
-print("WELCOME TO CLARKE'S VIDEO SHORTENER/COMPILER")
+print("WELCOME TO VIDEO SHORTENER/COMPILER")
 print("------")
 
 
@@ -23,7 +34,7 @@ for file_name in VIDEO_FILES:
     if os.path.isfile("temp/" + file_name + "_temp.mp4"):
         print('"' + file_name + '" has already been cached...')
     else:
-        video = VideoFileClip("sources/videos/" + file_name)
+        video = VideoFileClip(VIDEOS_PATH + "/" + file_name)
         # print("loaded - " + file_name)
 
         print("------")
